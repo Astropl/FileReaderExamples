@@ -7,17 +7,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Zad2
+public class Zad2{
 //Do katalogu resources dodaj plik users.txt Plik zawiera listę imion oraz nazwisk wraz z
 //wiekiem. Utwórz obiekt User i utwórz listę obiektów z danymi z pliku.
 
     /*Rozbuduj poprzedni algorytm. Utwórz 2 listy. Na jednej zapisz kobiety, natomiast na drugiej
         mężczyzn (dla ułatwienia przyjmujemy że każda osoba z imieniem kończącym się na „a”
-        jest kobietą). Na listach zapisuj tylko osoby pełnoletnie.*/ {
+        jest kobietą). Na listach zapisuj tylko osoby pełnoletnie.*/
+
+
+
     public void Zad2() throws IOException {
         String words[];
         String firstName, lastName;
-        int age;
+        int age = 0;
         List <String> users = new ArrayList <String>();
         List <String> usersWomen = new ArrayList <String>();
         List <String> usersMen = new ArrayList <String>();
@@ -52,22 +55,20 @@ public class Zad2
 //todo: Dodoaje liste mezczyzn
         }
         System.out.println("Cała lista");
-        for (int i = 0; i < users.size(); i++)
-        {
+        for (int i = 0; i < users.size(); i++) {
             System.out.println(users.get(i));
 
-    }
+        }
         System.out.println("Kobiety");
-        for (int i = 0; i < usersWomen.size(); i++)
-        {
-
-            System.out.println(usersWomen.get(i));
+        for (int i = 0; i < usersWomen.size(); i++) {
+           // if (usersWomen.get(i).>18 )
+            if (new Integer(age) > 18)// todo: tutuaj powinennem wywyłoac age z usera z jego indexem [i]
+                System.out.println(usersWomen.get(i));
 
         }
         System.out.println("Mezczyzni");
-        for (int i = 0; i < usersMen.size(); i++)
-        {
-
+        for (int i = 0; i < usersMen.size(); i++) {
+            if (age > 18)
             System.out.println(usersMen.get(i));
         }
     }
